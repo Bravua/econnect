@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.js">
+    <title>Document</title>
+</head>
+<body>
+     <!--nav-bar-->
+  <div class="bg1st shadow sticky-top">
+    <nav class="navbar  container  align-item-center  navbar-expand-lg d-flex order-list">
+      <a href="/" class="navbar-brand me-auto">
+        <div class="logo">E-connect.</i></div>
+      </a>
+    </nav>
+    </div> 
+
+    <div class="container">
+      <div class="card shadow loginbody mt-4">
+
+        <h3 style="text-align:center;font-size: small;font-weight: 400; color: white;">SIGN IN</h3>
+          <form action="/login" id="login-form" method="post">
+                <div class="row mt-3">
+                  <div class="col-md-6 form-group py-2">
+                    <label for="email">Email, required:</label>
+                    <input type="email" class="form-control" placeholder="" name="email">
+                  </div>
+                  <div class="col-md-6 form-group py-2">
+                    <label for="pwd">Password, required:</label>
+                    <input type="password" class="form-control" placeholder="" name="pswd" id="lpword">
+                    <span>
+                      <i id="show" style="float:right;margin-top: -30px; color: #00e600;" class="fa fa-eye" aria-hidden="true" onclick="toggle()"></i>
+                    </span>
+                </div>
+              </div>
+              <div class="clearfix" href="/payment"><button class="btn btn-success btn-md" >Log in</button></div>
+          </form>
+          <a href="/forget-password" class="mt-4" style="text-decoration: none; color:aliceblue" >forget password ?</a>
+          <a href="/signup" class="btn chm mt-3">DON'T HAVE AN ACCOUNT?</a>
+  
+        </div>
+      </div>
+
+  <script src="index.js"></script>
+  <script src="/server.js"></script>
+    <script src="/bootstrap5/js/bootstrap.bundle.min.js"></script> 
+</body>
+</html>
+<%- include('partials/footer2') %> 

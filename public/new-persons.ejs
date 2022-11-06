@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body class="">
+     <!--nav-bar-->
+  <div class="bg1st shadow sticky-top">
+    <nav class="navbar  container  align-item-center  navbar-expand-lg d-flex order-list">
+      <a href="/" class="navbar-brand me-auto">
+        <div class="logo">E-connect.</i></div>
+      </a>
+    </nav>
+  </div> 
+    
+    <div class="container">
+    <!--new persons-->
+        <p style="color:black; font-weight:700" class="mt-5">ADMIN</p>
+    <table class="table table-striped mt-4 table-responsive">
+            <tr>
+                <th>username</th>
+                <th>Gender</th>
+                <th>Plan</th>
+                <th>amount</th>
+                <th>approve payment</th>
+                <th>disapprove payment</th>
+            </tr>
+          <% for( const person of persons ) { %>
+          <tr>
+                <td><%= person.firstname %> <%= person.lastname %></td>
+                <td><%= person.gender %></td>
+                <td><%= person.plan %></td>
+                <% if (person.payment) { %>
+                  <td><%= person.payment.amount %></td>
+                  <% } else{%>
+                    <% if (payment[person.ID] !== undefined) { %>
+                    <td>Paid yet to be verified</td>
+                     <!--<img src="/<%# payment[person.ID].proof %>" alt="image">-->
+                    <% } else{%>
+                      <td>No paid yet</td>
+                      <td>Not paid yet</td>
+                      <% } %>
+                  <% } %> 
+                  <% console.log(payment[person.ID]) %> 
+                  <% if (person.payment) { %>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><a href="/admin/undo-payment/<%= person.ID %>" style="text-decoration: none; color:crimson;font-weight: 800;"><i class="fa fa-times" aria-hidden="true"></i> undo</a></td>
+                    <% } else{%>
+                      <% if (payment[person.ID] !== undefined) { %>
+                       <td><a href="/admin/accept-payment/<%= payment[person.ID].id %>/<%= person.ID %>"  style="text-decoration: none; color: green;font-weight: 800;"><i class="fa fa-registered" aria-hidden="true"></i> register</a></td>
+                       <% } else{%>
+                       <td style="opacity: 0.9;" class=" text-danger bold">not registered</td>
+                       <% } %>
+                      <% } %> 
+            </tr>
+            <% } %> 
+    </table>
+    </div>
+
+
+  <script src="server.js"></script>
+    <script src="bootstrap5/js/bootstrap.bundle.min.js"></script> 
+</body>
+</html>

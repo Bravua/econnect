@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Profile</title>
+</head>
+<body class="persbody">
+     <!--nav-bar-->
+  <div class="bg1st shadow sticky-top">
+    <nav class="topnav container">
+      <a href="" class="navbar-brand me-auto">
+        <div class="logo">E-connect.</i></div>
+      </a>
+
+
+      <div class="topnav-right head2">
+        <a href="/" class="head1  btn"> <i class="fas fa-power-off text-danger"></i> Logout</p> </a>
+        <a href=""><p class="ic"></p></a>
+   </div>
+   <div class="float-end mt-2"><a href="" data-bs-toggle="modal" data-bs-target="#myModalpers"><p class="ic"></p></a></div>
+
+   
+   
+</nav>
+</div>
+
+
+
+<!-- The smallscreen Modal -->
+<div class="modal" id="myModalpers">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content persmodal mt-2">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <a href="/" class=" me-auto btn btn-danger" style="text-decoration: none; color: white;"> <i class="fas fa-power-off"></i> Logout</a>
+           </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row container mainbody">
+    <div class="col-md-4 p-3">
+        <div class="col-12 prow">
+            <div class="avatar"></div>
+            <p class="mt-2 bold">Username: <%= person.firstname %> <%= person.lastname %></p>
+            <p class="bold">ID: <%= person.ID%></p>
+            <div class="card prpcard shadow"><%= person.plan%></div>
+        </div>
+    </div>
+
+    <div class="col-md-8 py-2">
+        <div class="col-12">
+           <div class="container tcon">
+            <ul class="tconul">
+                <li class="active tlis">
+                    <a href="/personal-area.html" class="active tlis">Task area</a>
+                </li>
+                <li class="tlis">
+                    <a href="/withdraw" class="tlis">Withraw</a>
+                </li>
+                <li class="tlis">
+                    <a href="/change-plan" class="tlis">Change Plan</a>
+                </li>
+            </ul>
+           </div> <hr>
+
+           <div class="container tconb">
+            <div class="card inscard shadow">
+              <h5> hello <%= person.firstname %>!</h5>
+              <p>Your daily task is to share the provided link below to your social media plartforms for people to see, and ensure you share it every 24hrs.
+                The link you see below are paid adverts
+              </p>
+            </div>
+            <div class="label tlabel mt-5">
+                Copy link: 
+            </div>
+            <div class="copy-text">
+               <input type="text" class="text" value="octamarkets.net/landing/awards/?utm_source=google&utm_medium=cpc&utm_campaign=13337006322&utm_content=123402526536&utm_term=kwd-608173573103&placement=&gclid=Cj0KCQjwidSWBhDdARIsAIoTVb35i3qZe5MHY96PM1nBu2vvOor4-DgEluveyBbgc76XnLf-1GusSckaAmpHEALw_wcB">
+               <button>
+                <i class="fas fa-clone"></i>
+               </button>
+            </div>
+            
+           </div>
+           
+           <hr>
+           <p class="lp">©2022<span style="color: darkgreen;"> E-connect</span>.All rights reserved </p>
+        </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+<script src="server.js"></script>
+<script src="bootstrap5/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<%- include('partials/footer2') %> 

@@ -1,0 +1,96 @@
+<script src="/js/jquery-3.6.0.min.js"></script>
+<!--last part-->
+<div class="con6 container-fluid shadow p-5 mt-5">
+    <div class="logob">E-connect.</i></div>
+    <div class="row">
+      <ul class="nav">
+          <a class="nav-link" href="https://www.facebook.com/profile.php?id=100085498141956"><i class="fab fa-facebook  fat shadow"></i></a>
+          <a class="nav-link" href="https://www.instagram.com"><i class="fab fa-instagram  fat shadow"></i></a>
+          <a class="nav-link" href="http://tayoabdulrasheed@gmail.com"><i class="fas fa-envelope  fat shadow"></i></a>
+          <a class="nav-link" href="tel:+08082225459"><i class="fab fa-whatsapp  fat shadow"></i></a>
+        </li>
+        </ul>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-4">
+         <div class="col-12">
+            <h4 class="h4e">Company</h4>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link lis" href="/about">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class= "nav-link lis" href="/careers">Careers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link lis" href="/ecommerce">E-commerce</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link lis" href="./referral">Referral Program</a>
+              </li>
+            </ul>
+         </div>
+      </div>
+      <div class="col-md-4">
+        <div class="col-12 mb-4 py-3 mt-1">
+          <h4 class="h4e">Service</h4>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link lis" href="/weeklyp">Get weekly payments for posting ads and banners</a>
+            </li>
+          </ul>
+        </div>
+     </div>
+      <div class="col-md-4">
+         <div class="col-md-12 mb-4 py-5">
+            <h3 class="h4f">Sign up to get the latest  news,
+              discounts, and more.</h3> 
+              <form action="" method="post">
+                <input type="email" class="form-control mt-1 form1" id="email" placeholder="Enter email" name="email">
+                <button type="button" class="btn btn-outline-dark btn-apt4 mt-2">Submit</button>
+              </form>
+         </div>
+      </div>
+    </div> <hr>
+    <p class="lp">©2022<span style="color: darkgreen;"> E-connect</span>.All rights reserved </p>
+  </div>
+
+
+  <script src="index.js"></script>
+  <script src="/server.js"></script>
+    <script src="/bootstrap5/js/bootstrap.bundle.min.js"></script> 
+    <% for (const name in locals.formBody) { %>
+      <script>
+          <% if (locals.formErrors[name]) { %>
+              $('[name="<%= name %>"]').addClass('is-invalid');
+              $('[name="<%= name %>"]').after('<div class="invalid-feedback"><%= locals.formErrors[name].msg %></div>');
+              // $('[name="<%= name %>"]').parent().append('<div class="invalid-feedback"><%= locals.formErrors[name].msg %></div>');            
+          <% } %>
+              var elem = $('[name="<%= name %>"]');
+          //check if the element is a input radio or checkbox
+          if (elem.is('input[type="radio"]') || elem.is('input[type="checkbox"]')) {
+              //check if the element is checked
+              elem = $('[name="<%= name %>"][value="<%= locals.formBody[name] %>"]').attr('checked', true);
+          } else {
+              elem.val("<%= locals.formBody[name] %>");
+          }
+      </script>
+      <% } %>
+  
+          <% if (locals.flash) { %>
+            <% for (const type in locals.flash) { %>
+              <div id="flash-message" class="alert alert-<%- type %> fade show w-50 mx-auto fixed-top mt-5 alert-dismissible">
+                  <button class="btn-close" data-bs-dismiss="alert"></button>
+                  <%- locals.flash[type] %> 
+              </div>
+                  <script>
+                      $(document).ready(function(){
+                          $('#flash-message').show();
+                          $('#flash-message').delay(4000).fadeOut();
+                      });
+                  </script>
+            <% } %> 
+          <% } %>
+</body>
+</html>

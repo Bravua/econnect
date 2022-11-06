@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.js">
+    <title>Document</title>
+</head>
+<body class="signbody">
+     <!--nav-bar-->
+  <div class="bg1st shadow sticky-top">
+    <nav class="navbar  container  align-item-center  navbar-expand-lg d-flex order-list">
+      <a href="/" class="navbar-brand me-auto">
+        <div class="logo">E-connect.</i></div>
+      </a>
+    </nav>
+    </div> 
+
+    <!--signup container-->
+    <div class="container mscon mt-2">
+      <h3 style="text-align:center;font-size: small;font-weight: 400;">Open new account</h3>
+        <h5 class="msh4">PLANS:</h5>
+        <div class="row">
+          <div class="col-6">
+            <div class="card brcard shadow">
+                <h3 class="ph3">BRONZE</h3>
+                <p class="pp">Register: <span style="color: lightgreen; font-weight:700">₦3,499</span></p>
+                <p class="pp">Weekly payments: <span style="color: lightgreen; font-weight:700">₦1,499</span></p>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card scard shadow">
+              <h3 class="ph3">SILVER</h3>
+                <p class="pp">Register: <span style="color: lightgreen; font-weight:700">₦7,499</span></p>
+                <p class="pp">Weekly payments: <span style="color: lightgreen; font-weight:700">₦3,499</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-6">
+            <div class="card gcard shadow">
+                <h3 class="ph3">GOLD</h3>
+                <p class="pp">Register: <span style="color: lightgreen; font-weight:700">₦120,000</span></p>
+                <p class="pp">Weekly payments: <span style="color: lightgreen; font-weight:700">₦75,000</span></p>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card pltcard shadow">
+              <h3 class="ph3">Platinum</h3>
+                <p class="pp">Register: <span style="color: lightgreen; font-weight:700">₦300,000</span></p>
+                <p class="pp">Weekly payments: <span style="color: lightgreen; font-weight:700">₦240,000</span></p>
+            </div>
+          </div>
+        </div>
+
+        <form class="mt-5" action="/admin/add-persons" method="post">
+          <div class="row mt-5">
+            <div class="col-md-6 form-group">
+              <label for="fname">First name, required:</label>
+              <input type="text" class="form-control" placeholder="First name" name="firstname">
+            </div>
+            <div class="col-md-6 form-group">
+              <label for="pwd">Last name, required:</label>
+              <input type="lname" class="form-control" placeholder="Last name" name="lastname">
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-md-6 form-group">
+              <label for="email">Email, required:</label>
+              <input type="email" class="form-control" placeholder="Enter a valid email" name="email">
+            </div>
+            <div class="col-md-6 form-group">
+              <label for="pwd">Password, required:</label>
+              <input type="password" class="form-control" placeholder="Set password" name="pswd" id="myInput">
+              <span class="eye float-end" onclick="myFunction()">
+                <i id="hide1" class="fa fa-eye" aria-hidden="true"></i>
+                <i id="hide2" class="fa fa-eye-slash" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-md-6 form-group">
+              <label for="select">Plan, required:</label>
+              <select name="plan" class="form-control">
+                <% for( let plan of plans ) { %>
+                <option value="<%= plan.name %>"><%= plan %></option>
+                <% } %>
+            </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Gender:</label><br>
+              <select id="gender"  name="gender" class="form-control">
+                <option value="male">select gender</option>
+                <option value="male">male</option>
+                <option value="female">female</option>
+              </select>
+          </div>
+          </div>
+
+
+          <div class="col-12 mt-4">
+            <label for="comment">HOW DID YOU KNOW ABOUT US?</label>
+            <textarea class="form-control" rows="3" id="comment" name="txt"></textarea>
+          </div>
+          <div class="clearfix mt-1"><button class="btn btn-success btn-sm float-right" data-bs-toggle="modal" data-bs-target="#myModal3">OPEN ACCOUNT</button></div>
+
+        </form>
+        <a href="/login" class="btn chm mx-auto">ALREADY GOT AN ACCOUNT?</a>
+  </div>
+  <script src="index.js"></script>
+  <script src="/server.js"></script>
+    <script src="/bootstrap5/js/bootstrap.bundle.min.js"></script> 
+</body>
+</html>
+<%- include('partials/footer2') %> 

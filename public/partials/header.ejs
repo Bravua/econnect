@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+  <!--our contacts-->
+  <div class="con1">
+    <div class="container clearfix p-1">
+        <div class="float-start">
+            <a href="" class="nav1"><i class="fas fa-envelope"></i> connectwithE-connect</a>
+        </div>
+        <div class="float-end">
+            <a href="https://www.facebook.com/help/668969529866328/?helpref=uf_share" class="nav1"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/afolabi_kenneth" class="nav1"><i class="fab fa-instagram"></i></a>
+            <a href="http://tayoabdulrasheed@gmail.com" class="nav1"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+08082225459" class="nav1"><i class="fab fa-whatsapp"></i></a>
+        </div>
+  </div>
+</div>
+
+<!--nav-bar-->
+<div class="bg1st shadow sticky-top">
+    <nav class="navbar container d-flex align-item-center order-list  navbar-expand-lg ">
+      <a href="/" class="navbar-brand me-auto">
+        <div class="logo">E-connect.</i></div>
+      </a>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/referral">Referral Program</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/careers">Careers</a>
+          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link"  href="tel:+08082225459">Contact Us</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/ecommerce">E-commerce</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#myModaladmin">Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn shadow" style="border-radius: 25px; background-color:  #003300; color: white; font-size: small;" type="button" href="/signup">OPEN AN ACCOUNT</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn shadow" style="border-radius: 25px; background-color: white; color: #003300; font-size: small;" type="button" href="/login">lOG IN</a>
+          </li>
+        </ul>
+      </div>
+      <button type="button" class="btn svg1" data-bs-toggle="modal" data-bs-target="#myModal1">
+        <svg width="25" height="25">
+            <path d="M0,5 30,5" stroke="#000000" stroke-width="2"></path>
+            <path d="M0,14 30,14" stroke="#000000" stroke-width="2"></path>
+            <path d="M0,23 30,23" stroke="#000000" stroke-width="2"></path>
+        </svg>
+      </button>  
+    </nav>
+</div>
+
+    <!-- The Modal -->
+<div class="modal fade svg1" id="myModal1">
+<div class="modal-dialog">
+  <div class="modal-content modc">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <div class="logo">E-connect.</i></div>
+      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link mnav" href="/about">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mnav"  href="/referral">Referral Program</a>
+        </li>
+        <li class="nav-item">
+          <a class= "nav-link mnav" href="/careers">Careers</a>
+        </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mnav" href="tel:+08082225459">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  mnav" href="/ecommerce">E-commerce</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+        <a type="button" class="btn btn-success"  id="" href="/signup">Open account</a>
+        <a type="button" class="btn btn-success" id="" href="/login">Log in</a>
+      <a type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#myModaladmin">admin</a>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+
+
+
+<!--admin Log In modal-->
+<div class="modal" id="myModaladmin">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-xxl-down">
+    <div class="modal-content mlcon">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title msh4">Only for admins</h4>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="container mlcon lcon">
+          <form action="/admin/login" id="login-form" method="post">
+                <div class="row mt-3">
+                  <div class="col-md-6 form-group">
+                    <label for="email">Email, required:</label>
+                    <input type="email" class="form-control" placeholder="Email,required" name="ad_email">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="pwd">Password, required:</label>
+                    <input type="password" class="form-control" placeholder="password,required" name="ad_pswd">
+                </div>
+              </div>
+              <div class="clearfix mt-1" href=""><button class="btn btn-success btn-sm float-right" >Log in</button></div>
+            
+          </form>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+    
